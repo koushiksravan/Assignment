@@ -1,0 +1,103 @@
+[
+  {
+    "title": "User A",
+    "data": {
+      "name": "Alice",
+      "email": "alice@demo",
+      "password": "pass",
+      "_id": "6944393148e6638ee8ccdc3e",
+      "createdAt": "2025-12-18T17:26:09.945Z",
+      "updatedAt": "2025-12-18T17:26:09.945Z",
+      "__v": 0
+    }
+  },
+  {
+    "title": "User B",
+    "data": {
+      "name": "Bob",
+      "email": "bob@demo",
+      "password": "pass",
+      "_id": "6944393148e6638ee8ccdc42",
+      "createdAt": "2025-12-18T17:26:09.954Z",
+      "updatedAt": "2025-12-18T17:26:09.954Z",
+      "__v": 0
+    }
+  },
+  {
+    "title": "Group",
+    "data": {
+      "name": "Trip",
+      "members": [
+        "6944393148e6638ee8ccdc3e",
+        "6944393148e6638ee8ccdc42"
+      ],
+      "createdBy": "6944393148e6638ee8ccdc3e",
+      "_id": "6944393148e6638ee8ccdc44",
+      "createdAt": "2025-12-18T17:26:09.956Z",
+      "updatedAt": "2025-12-18T17:26:09.956Z",
+      "__v": 0
+    }
+  },
+  {
+    "title": "Expense",
+    "data": {
+      "description": "Dinner",
+      "amount": 120,
+      "group": "6944393148e6638ee8ccdc44",
+      "paidBy": "6944393148e6638ee8ccdc3e",
+      "splitType": "equal",
+      "splits": [
+        {
+          "user": "6944393148e6638ee8ccdc3e",
+          "amount": 60,
+          "_id": "6944393148e6638ee8ccdc47"
+        },
+        {
+          "user": "6944393148e6638ee8ccdc42",
+          "amount": 60,
+          "_id": "6944393148e6638ee8ccdc48"
+        }
+      ],
+      "_id": "6944393148e6638ee8ccdc46",
+      "createdAt": "2025-12-18T17:26:09.960Z",
+      "updatedAt": "2025-12-18T17:26:09.960Z",
+      "__v": 0
+    }
+  },
+  {
+    "title": "Balances (Bob)",
+    "data": {
+      "owes": [
+        {
+          "_id": "6944393148e6638ee8ccdc4c",
+          "group": "6944393148e6638ee8ccdc44",
+          "fromUser": "6944393148e6638ee8ccdc42",
+          "toUser": {
+            "_id": "6944393148e6638ee8ccdc3e",
+            "name": "Alice",
+            "email": "alice@demo",
+            "password": "pass",
+            "createdAt": "2025-12-18T17:26:09.945Z",
+            "updatedAt": "2025-12-18T17:26:09.945Z",
+            "__v": 0
+          },
+          "amount": 60,
+          "createdAt": "2025-12-18T17:26:09.964Z",
+          "updatedAt": "2025-12-18T17:26:09.964Z",
+          "__v": 0
+        }
+      ],
+      "owed": []
+    }
+  },
+  {
+    "title": "Simplified",
+    "data": [
+      {
+        "from": "6944393148e6638ee8ccdc42",
+        "to": "6944393148e6638ee8ccdc3e",
+        "amount": 60
+      }
+    ]
+  }
+]

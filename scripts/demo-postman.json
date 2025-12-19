@@ -1,0 +1,150 @@
+{
+  "info": {
+    "name": "Expense App Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User A",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5001/api/users",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice\",\n  \"email\": \"alice@demo\",\n  \"password\": \"pass\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create User B",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5001/api/users",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bob\",\n  \"email\": \"bob@demo\",\n  \"password\": \"pass\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Group",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5001/api/groups",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "groups"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Trip\",\n  \"members\": [\n    \"6944393148e6638ee8ccdc3e\",\n    \"6944393148e6638ee8ccdc42\"\n  ],\n  \"createdBy\": \"6944393148e6638ee8ccdc3e\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Expense",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5001/api/expenses",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "expenses"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Dinner\",\n  \"amount\": 120,\n  \"group\": \"6944393148e6638ee8ccdc44\",\n  \"paidBy\": \"6944393148e6638ee8ccdc3e\",\n  \"splitType\": \"equal\",\n  \"splits\": [\n    \"6944393148e6638ee8ccdc3e\",\n    \"6944393148e6638ee8ccdc42\"\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Balances (Bob)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5001/api/balances/user/6944393148e6638ee8ccdc42/group/6944393148e6638ee8ccdc44",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "balances",
+            "user",
+            "6944393148e6638ee8ccdc42",
+            "group",
+            "6944393148e6638ee8ccdc44"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Simplify Balances",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5001/api/balances/simplify/6944393148e6638ee8ccdc44",
+          "host": [
+            "http://localhost:5001"
+          ],
+          "path": [
+            "api",
+            "balances",
+            "simplify",
+            "6944393148e6638ee8ccdc44"
+          ]
+        }
+      }
+    }
+  ]
+}
